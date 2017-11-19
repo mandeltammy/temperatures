@@ -12,9 +12,10 @@ public:
 	{
 		return m_c * 9.0 / 5.0 + 32.0;
 	}
+
 	friend ostream &operator<<(ostream & out, Celsius const& c)
 	{
-		out << "temperature in celsius: " << c.m_c;
+		out << c.m_c << "\370c";
 		return out;
 	}
 };
@@ -36,7 +37,7 @@ public:
 	}
 	friend ostream &operator<<(ostream & out, Fahrenheit const& f)
 	{
-		out << "temperature in fahrenheit: " << f.m_f;
+		out << f.m_f << " \370f";
 		return out;
 	}
 };
@@ -47,18 +48,17 @@ int main()
 	Fahrenheit f(100);
 	cout << c.celsiusToFahrenheit() << endl;
 	cout << c;
-	cout << f.fahrenheitToCelsius() << endl;*/
+	cout << f.fahrenheitToCelsius() << endl;
+	Fahrenheit f(100);*/
 
-	Fahrenheit f(100);
 	Celsius boil(100);
 	Celsius freeze(0);
-//	Celsius absoluteZero(−273.15);
+	Celsius absoluteZero(-273.15);
 
-//	f = c;
-
-	cout << "\t\tcelsius:\tfahrenheit:\n----------------------------------------------\n";
-	cout << "boil temperature:" << boil<<"\t" << boil.celsiusToFahrenheit() << endl;
-	cout << "freeze temperature:" << freeze <<"\t"<< freeze.celsiusToFahrenheit() << endl;
+	cout << "\t\t\tcelsius:\tfahrenheit:\n--------------------------------------------------\n";
+	cout << "boil temperature:\t" << boil << "\t\t" << boil.celsiusToFahrenheit() << endl;
+	cout << "freeze temperature:\t" << freeze <<"\t\t"<< freeze.celsiusToFahrenheit() << endl;
+	cout << "absolute zero:\t\t" << absoluteZero << "\t" << absoluteZero.celsiusToFahrenheit() << endl;
 
 	return 0;
 }
